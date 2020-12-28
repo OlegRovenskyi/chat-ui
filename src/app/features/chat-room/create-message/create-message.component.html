@@ -1,0 +1,7 @@
+<form [formGroup]="form" class="create-message" (submit)="onSubmit()">
+  <mat-form-field class="mat-full-width">
+    <input matInput formControlName="message" class="message" type="text" placeholder="Message">
+  </mat-form-field>
+
+  <button mat-raised-button class="mat-success send-btn" aria-label="Send">Send</button>
+</form>

@@ -1,0 +1,19 @@
+@import '~src/styles/variables';
+
+.message-info {
+  display: flex;
+  padding: 10px;
+
+  &__user {
+    color: $user-color;
+    padding: 0 10px;
+  }
+}
+
+.even-item {
+  background-color: $chat-message-even-item-bg;
+}
+
+.odd-item {
+  background-color: $chat-message-odd-item-bg;
+}

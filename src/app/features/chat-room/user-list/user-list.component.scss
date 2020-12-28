@@ -1,0 +1,21 @@
+@import '~src/styles/variables';
+
+.list {
+  margin: 15px;
+}
+
+.odd-item {
+  background-color: $user-odd-item-bg;
+
+  &:hover {
+    background-color: $user-odd-item-hover-bg;
+  }
+}
+
+.even-item {
+  color: $user-even-item-color;
+  background-color: $user-even-item-bg;
+  &:hover {
+    background-color: $user-even-item-hover-bg;
+  }
+}

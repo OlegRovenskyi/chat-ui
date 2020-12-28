@@ -1,0 +1,8 @@
+<mat-action-list role="list" class="list">
+  <ng-container *ngFor="let user of listOfUsers; let index = index;">
+      <button
+        mat-list-item
+        [class]="index % 2 === 0 ? 'even-item' : 'odd-item'"
+      > {{user}} </button>
+  </ng-container>
+</mat-action-list>

@@ -1,0 +1,8 @@
+@import '~src/styles/variables';
+
+.app-header {
+  font-size: 16px;
+  padding: 25px 20px;
+  color: $header-text-color;
+  background-color: $header-bg;
+}

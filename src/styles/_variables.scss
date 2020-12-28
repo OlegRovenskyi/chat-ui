@@ -1,0 +1,24 @@
+$black: #070707;
+$dark-gray: #292929;
+$gray: #D3D3D3;
+$blue: #1976d2;
+$white: #fff;
+
+$header-bg: $dark-gray;
+$header-text-color: $gray;
+
+$chat-side-bar-bg: $dark-gray;
+$chat-side-bar-text-color: $gray;
+
+$user-even-item-color: $white;
+$user-even-item-bg: $blue;
+$user-even-item-hover-bg: darken($blue, 10%);
+
+$user-odd-item-bg: $gray;
+$user-odd-item-hover-bg: darken($gray, 10%);
+
+$user-color: $blue;
+
+$chat-message-even-item-bg: $gray;
+$chat-message-odd-item-bg: $white;
+

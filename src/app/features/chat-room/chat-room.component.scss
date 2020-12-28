@@ -1,0 +1,36 @@
+@import '~src/styles/variables';
+
+.user-list-side-bar {
+  color: $chat-side-bar-text-color;
+  background-color: $chat-side-bar-bg;
+}
+
+.add-user-section {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100%;
+}
+
+.add-user {
+  width: 80%;
+}
+
+.chat-side-bar {
+  margin: 10px;
+}
+
+.create-msg-section {
+  position: absolute;
+  bottom: 0;
+  width: 80%;
+  margin-top: -70px;
+}
+
+.bg-red {
+  background: #1976d2;
+}
+
+.bg-g {
+  background: #888888;
+}
