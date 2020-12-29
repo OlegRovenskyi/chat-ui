@@ -1,3 +1,4 @@
+import { ValidatorFn } from '@angular/forms';
 import { MessageFormData } from './create-message/create-message.models';
 
 export interface FullMessageInfo extends MessageFormData {
@@ -7,8 +8,6 @@ export interface FullMessageInfo extends MessageFormData {
 export interface UserIdentifier {
   symbol: string;
 }
-
-import { ValidatorFn } from '@angular/forms';
 
 export type FormGroupConfig<T> = {
   [key in keyof T]:  T[key]
