@@ -1,7 +1,19 @@
-import { ChangeDetectionStrategy, Component, OnInit, Output, EventEmitter } from '@angular/core';
+import {
+  ChangeDetectionStrategy,
+  Component,
+  OnInit,
+  Output,
+  EventEmitter,
+  Input,
+  OnChanges,
+  SimpleChanges,
+  ViewChild,
+  ElementRef,
+} from '@angular/core';
 import { FormBuilder, FormGroup } from '@angular/forms';
 import { MessageFormData } from './create-message.models';
 import * as _ from 'lodash';
+import { UserIdentifier } from '../chat-room.models';
 
 @Component({
   selector: 'app-create-message',
@@ -10,11 +22,16 @@ import * as _ from 'lodash';
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
 
-export class CreateMessageComponent implements OnInit {
+export class CreateMessageComponent implements OnInit, OnChanges {
   public form!: FormGroup;
+
+  @Input()
+  public identifier!: UserIdentifier;
 
   @Output()
   public dataChange = new EventEmitter<MessageFormData>();
+
+  @ViewChild('messageInput', { static: true }) public messageInput!: ElementRef;
 
   public constructor(
     private fb: FormBuilder,
@@ -26,6 +43,14 @@ export class CreateMessageComponent implements OnInit {
     };
 
     this.form = this.fb.group(config as any);
+  }
+
+  public ngOnChanges(changes: SimpleChanges): void {
+    if (_.isEmpty(changes.identifier.currentValue)) { return; }
+
+    const formControl = this.form.get('message');
+    formControl?.patchValue(`${formControl?.value} ${this.identifier.symbol}`);
+    this.messageInput.nativeElement.focus();
   }
 
   public onSubmit(): void {

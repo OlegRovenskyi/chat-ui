@@ -1,4 +1,4 @@
-import { ChangeDetectionStrategy, Component, EventEmitter, Input, Output } from '@angular/core';
+import { ChangeDetectionStrategy, Component, Input } from '@angular/core';
 import { FullMessageInfo } from '../chat-room.models';
 
 import * as _ from 'lodash';
@@ -17,19 +17,11 @@ export class ChatMessageComponent {
   @Input()
   public index = 0;
 
-  @Output()
-  public setUserIdentifier = new EventEmitter<string>();
-
   public transformMillisecond(millisecond: number): string {
     if (_.isUndefined(millisecond)) { return ''; }
 
     const date = new Date(millisecond);
 
     return `${date.getHours()} : ${date.getMinutes()}`;
-  }
-
-  // TODO
-  public userIdentifier(): void {
-    this.setUserIdentifier.emit('@');
   }
 }

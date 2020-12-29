@@ -1,6 +1,7 @@
-import { ChangeDetectionStrategy, Component } from '@angular/core';
+import { ChangeDetectionStrategy, ChangeDetectorRef, Component } from '@angular/core';
 import { ChatRoomService } from './chat-room.service';
 import { MessageFormData } from './create-message/create-message.models';
+import { UserIdentifier } from './chat-room.models';
 
 @Component({
   selector: 'app-chat-room',
@@ -11,6 +12,7 @@ import { MessageFormData } from './create-message/create-message.models';
 
 export class ChatRoomComponent {
   public isAddedUser = false;
+  public identifier!: { symbol: string };
 
   public constructor(
     public chatRoomService: ChatRoomService,
@@ -25,5 +27,9 @@ export class ChatRoomComponent {
     this.chatRoomService.addUser(username);
 
     this.chatRoomService.getListOfUsers();
+  }
+
+  public addUserIdentifier(identifier: UserIdentifier): void {
+    this.identifier = identifier;
   }
 }

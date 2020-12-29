@@ -1,5 +1,5 @@
 <div class="message-info" [class]="index % 2 === 0 ? 'even-item' : 'odd-item'">
   <div class="message-info__time">({{ transformMillisecond(messageInfo.time) }})</div>
-  <div class="message-info__user" (dblclick)="userIdentifier()">{{ messageInfo.username }}:</div>
+  <div class="message-info__user">{{ messageInfo.username }}:</div>
   <div class="message-info__message">{{ messageInfo.message }}</div>
 </div>
