@@ -9,5 +9,7 @@
     >
   </mat-form-field>
 
-  <button mat-raised-button class="mat-success send-btn" aria-label="Send">Send</button>
+  <app-emoji-pack class="emoji emoji-mart" (selectedEmoji)="addEmoji($event)"></app-emoji-pack>
+
+  <button mat-raised-button class="mat-success" aria-label="Send">Send</button>
 </form>

@@ -65,6 +65,11 @@ export class CreateMessageComponent implements OnInit, OnChanges {
     }
   }
 
+  public addEmoji(emoji: any): void {
+    const formControl = this.form.get('message');
+    formControl?.patchValue(`${formControl?.value} ${emoji.native}`);
+  }
+
   private resetForm(): void {
     this.form.get('message')?.patchValue('');
   }

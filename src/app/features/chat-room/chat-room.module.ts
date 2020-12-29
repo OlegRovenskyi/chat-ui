@@ -12,7 +12,13 @@ import { AppHeaderModule } from '../../shared/ui/app-header';
 import { SocketIoModule, SocketIoConfig } from 'ngx-socket-io';
 import { ChatRoomService } from './chat-room.service';
 
-const config: SocketIoConfig = { url: 'http://localhost:3000', options: {} };
+import { EmojiModule } from '@ctrl/ngx-emoji-mart/ngx-emoji';
+import { PickerModule } from '@ctrl/ngx-emoji-mart';
+
+const config: SocketIoConfig = {
+  url: 'http://localhost:3000',
+  options: {}
+};
 
 @NgModule({
   imports: [
@@ -28,6 +34,9 @@ const config: SocketIoConfig = { url: 'http://localhost:3000', options: {} };
     FlexLayoutModule,
 
     AppHeaderModule,
+
+    PickerModule,
+    EmojiModule,
 
     SocketIoModule.forRoot(config),
   ],

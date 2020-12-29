@@ -1,13 +1,10 @@
 .create-message {
   padding: 10px;
+  position: relative;
 }
 
 .mat-full-width {
   width: 80%;
-}
-
-.send-btn {
-  margin-left: 20px;
 }
 
 .message {
@@ -19,4 +16,8 @@
 .mat-success {
   background-color: green;
   color: #fff;
+}
+
+.emoji {
+  margin: 0 5px;
 }
