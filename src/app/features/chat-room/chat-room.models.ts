@@ -14,7 +14,7 @@ export type FormGroupConfig<T> = {
   [key in keyof T]:  T[key]
     | [T[key]]
     | [
-    T[key],
-      ValidatorFn | ValidatorFn[]
-  ];
+      T[key],
+        ValidatorFn | ValidatorFn[]
+    ];
 };
