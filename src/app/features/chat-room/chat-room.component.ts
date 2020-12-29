@@ -24,7 +24,7 @@ export class ChatRoomComponent implements OnInit {
     public chatRoomService: ChatRoomService,
   ) {}
 
-  ngOnInit() {
+  public ngOnInit(): void {
     this.screenHeight = window.innerHeight;
   }
 
