@@ -11,9 +11,9 @@ import {
   ElementRef,
 } from '@angular/core';
 import { FormBuilder, FormGroup } from '@angular/forms';
-import { MessageFormData } from './create-message.models';
+import { CreateMessageConfig, MessageFormData } from './create-message.models';
 import * as _ from 'lodash';
-import { UserIdentifier } from '../chat-room.models';
+import { FormGroupConfig, UserIdentifier } from '../chat-room.models';
 
 @Component({
   selector: 'app-create-message',
@@ -38,11 +38,11 @@ export class CreateMessageComponent implements OnInit, OnChanges {
   ) {}
 
   public ngOnInit(): void {
-    const config: any = {
+    const config: FormGroupConfig<CreateMessageConfig> = {
       message: [''],
     };
 
-    this.form = this.fb.group(config as any);
+    this.form = this.fb.group(config);
   }
 
   public ngOnChanges(changes: SimpleChanges): void {

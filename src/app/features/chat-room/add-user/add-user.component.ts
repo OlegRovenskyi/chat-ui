@@ -1,5 +1,7 @@
 import { ChangeDetectionStrategy, Component, OnInit, Output, EventEmitter } from '@angular/core';
 import { FormBuilder, FormGroup } from '@angular/forms';
+import { FormGroupConfig } from '../chat-room.models';
+import { UserConfig } from './add-user.models';
 import * as _ from 'lodash';
 
 @Component({
@@ -20,11 +22,11 @@ export class AddUserComponent implements OnInit {
   ) {}
 
   public ngOnInit(): void {
-    const config: any = {
+    const config: FormGroupConfig<UserConfig> = {
       username: [''],
     };
 
-    this.form = this.fb.group(config as any);
+    this.form = this.fb.group(config);
   }
 
   public onSubmit(): void {
