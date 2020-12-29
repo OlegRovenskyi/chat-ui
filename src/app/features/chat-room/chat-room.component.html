@@ -19,6 +19,7 @@
       <div fxFlex="80" class="chat-side-bar">
         <app-chat
           class="chat-section"
+          [style.height.px]="screenHeight - 150"
           [message]="chatRoomService.getMessage() | async"
         ></app-chat>
 
